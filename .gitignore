@@ -1,0 +1,6 @@
+# 데이터셋 폴더 제외
+/datasets/
+/.venv/
+__pycache__/
+*.pyc
+/.idea/
