@@ -10,7 +10,7 @@ IMG_DIR = (
         / "datasets"
         / "MOT17"
         / "train"
-        / "MOT17-05-FRCNN"
+        / "MOT17-13-SDP"
         / "img1"
 )
 
