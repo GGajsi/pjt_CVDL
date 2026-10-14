@@ -1,6 +1,7 @@
 import cv2 as cv
+from pathlib import Path
 
-img = cv.imread('soccer.jpg')                      # 영상 읽기
+img = cv.imread(str(Path(__file__).resolve().parents[1] / "ch02" / "soccer.jpg"))
 
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 

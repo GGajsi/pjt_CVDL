@@ -3,11 +3,10 @@ import pandas as pd
 from pathlib import Path
 
 # 1. 프로젝트 및 데이터 경로
-BASE_DIR = Path(__file__).resolve().parents[2]
+BASE_DIR = Path(__file__).resolve().parent
 
 SEQ_DIR = (
         BASE_DIR
-        / "datasets"
         / "MOT17"
         / "train"
         / "MOT17-05-FRCNN"

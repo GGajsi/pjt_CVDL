@@ -1,8 +1,9 @@
 import cv2 as cv
 import numpy as np
+from pathlib import Path
 
 # 1. 영상 로드 및 그레이스케일 변환
-img = cv.imread('soccer.jpg')
+img = cv.imread(str(Path(__file__).resolve().parents[1] / "ch02" / "soccer.jpg"))
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
 # 2. 캐니 에지 검출 (Tlow=100, Thigh=200)

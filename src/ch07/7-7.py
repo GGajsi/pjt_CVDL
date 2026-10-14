@@ -3,8 +3,9 @@ import tensorflow as tf
 import cv2 as cv 
 import matplotlib.pyplot as plt
 import winsound
+from pathlib import Path
 
-model=tf.keras.models.load_model('dmlp_trained.h5')
+model=tf.keras.models.load_model(str(Path(__file__).resolve().parent / "dmlp_trained.h5"))
 
 def reset():
     global img

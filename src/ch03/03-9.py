@@ -1,6 +1,7 @@
 import cv2 as cv
 import numpy as np
 import time
+from pathlib import Path
 
 def my_cvtGray1(bgr_img):
     g = np.zeros([bgr_img.shape[0], bgr_img.shape[1]])
@@ -14,7 +15,7 @@ def my_cvtGray2(bgr_img):
     g = 0.114 * bgr_img[:, :, 0] + 0.587 * bgr_img[:, :, 1] + 0.299 * bgr_img[:, :, 2]
     return np.uint8(g)
 
-img = cv.imread('girl_laughing.png')
+img = cv.imread(str(Path(__file__).resolve().parents[1] / "ch02" / "girl_laughing.jpg"))
 
 start = time.time()
 my_cvtGray1(img)

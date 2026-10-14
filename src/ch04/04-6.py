@@ -10,8 +10,8 @@ coffee = skimage.data.coffee()
 
 start = time.time()
 slic = skimage.segmentation.slic(coffee, compactness=20, n_segments=600, start_label=1)
-g = skimage.future.graph.rag_mean_color(coffee, slic, mode='similarity')
-ncut = skimage.future.graph.cut_normalized(slic, g)  # 정규화 절단
+g = skimage.graph.rag_mean_color(coffee, slic, mode='similarity')
+ncut = skimage.graph.cut_normalized(slic, g)  # 정규화 절단
 print(coffee.shape, 'Coffee 영상을 분할하는 데 ', time.time() - start, '초 소요')
 
 marking = skimage.segmentation.mark_boundaries(coffee, ncut)

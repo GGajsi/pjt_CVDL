@@ -1,6 +1,7 @@
 import cv2 as cv
+from pathlib import Path
 
-img = cv.imread('soccer.jpg')
+img = cv.imread(str(Path(__file__).resolve().parents[1] / "ch02" / "soccer.jpg"))
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
 grad_x = cv.Sobel(gray, cv.CV_32F, 1, 0, ksize=3)       # 소벨 연산자 적용

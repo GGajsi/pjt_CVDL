@@ -11,11 +11,10 @@ import time
 # ==========================================
 # 1. 기본 환경 설정
 # ==========================================
-BASE_DIR = Path(__file__).resolve().parents[2]
+BASE_DIR = Path(__file__).resolve().parent
 
 SEQ_DIR = (
         BASE_DIR
-        / "datasets"
         / "MOT17"
         / "test"
         / "MOT17-14-SDP"

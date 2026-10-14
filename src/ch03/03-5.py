@@ -1,7 +1,8 @@
 import cv2 as cv
 import numpy as np
+from pathlib import Path
 
-img = cv.imread('soccer.jpg')
+img = cv.imread(str(Path(__file__).resolve().parents[1] / "ch02" / "soccer.jpg"))
 img = cv.resize(img, dsize=(0, 0), fx=0.25, fy=0.25)
 
 def gamma(f, gamma=1.0):

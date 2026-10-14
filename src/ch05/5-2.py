@@ -1,7 +1,8 @@
 import cv2 as cv
+from pathlib import Path
 
 # 1. 이미지 읽기
-img = cv.imread('mot_color70.jpg')
+img = cv.imread(str(Path(__file__).resolve().parent / "mot_color70.jpg"))
 
 if img is None:
     raise FileNotFoundError("이미지 파일을 찾을 수 없습니다.")

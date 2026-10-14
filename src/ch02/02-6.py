@@ -1,7 +1,8 @@
 import cv2 as cv
 import sys
+from pathlib import Path
 
-img = cv.imread('girl_laughing.jpg')
+img = cv.imread(str(Path(__file__).resolve().parent / "girl_laughing.jpg"))
 
 if img is None:
     sys.exit('파일을 찾을 수 없습니다.')

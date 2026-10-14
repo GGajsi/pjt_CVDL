@@ -1,8 +1,9 @@
 import cv2 as cv
 import numpy as np
+from pathlib import Path
 
 # 1. 이미지 로드 및 캔버스 준비
-img = cv.imread('soccer.jpg')
+img = cv.imread(str(Path(__file__).resolve().parents[1] / "ch02" / "soccer.jpg"))
 img_show = img.copy()
 
 # 2. 마스크 및 브러시 파라미터 초기화
@@ -35,7 +36,7 @@ cv.imshow('Painting', img_show)
 
 print("마우스 좌클릭(물체)/우클릭(배경)으로 표시한 뒤 'q'를 누르면 GrabCut이 실행됩니다.")
 while True:
-    if cv.waitKey(1) & 0xFF == ord('q'):
+    if (cv.waitKey(1) & 0xFF) == ord('q'):
         break
 
 # 5. GrabCut 알고리즘 적용

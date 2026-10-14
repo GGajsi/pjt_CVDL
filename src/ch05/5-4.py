@@ -1,9 +1,11 @@
 import cv2 as cv
 import numpy as np
+from pathlib import Path
 
-img1=cv.imread('mot_color70.jpg')[190:350,440:560] # 버스를 크롭하여 모델 영상으로 사용
+img_dir = Path(__file__).resolve().parent
+img1=cv.imread(str(img_dir / "mot_color70.jpg"))[190:350,440:560] # 버스를 크롭하여 모델 영상으로 사용
 gray1=cv.cvtColor(img1,cv.COLOR_BGR2GRAY)
-img2=cv.imread('mot_color83.jpg')			     # 장면 영상
+img2=cv.imread(str(img_dir / "mot_color83.jpg"))			     # 장면 영상
 gray2=cv.cvtColor(img2,cv.COLOR_BGR2GRAY)
 
 sift=cv.SIFT_create()

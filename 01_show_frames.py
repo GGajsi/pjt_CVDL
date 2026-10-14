@@ -2,12 +2,11 @@ import cv2 as cv
 from pathlib import Path
 
 # 프로젝트 경로
-BASE_DIR = Path(__file__).resolve().parents[2]
+BASE_DIR = Path(__file__).resolve().parent
 
 # 이미지 폴더
 IMG_DIR = (
         BASE_DIR
-        / "datasets"
         / "MOT17"
         / "train"
         / "MOT17-05-FRCNN"
