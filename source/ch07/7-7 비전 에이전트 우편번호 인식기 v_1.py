@@ -4,12 +4,13 @@ import cv2 as cv
 import matplotlib.pyplot as plt
 import winsound
 
-model=tf.keras.models.load_model('dmlp_trained.h5')
+model=tf.keras.models.load_model('dmlp_trained.h5') # 저장해 둔 AI의 기억(학습된 가중치)을 불러옵니다. (7-5에서 생성)
 
+# 새하얀 그림판과 숫자 칸 다섯 개를 만듭니다.
 def reset():
     global img
        
-    img=np.ones((200,520,3),dtype=np.uint8)*255
+    img=np.ones((200,520,3),dtype=np.uint8)*255  # 200×520 크기의 흰색 이미지 배열을 만듭니다.
     for i in range(5):
         cv.rectangle(img,(10+i*100,50),(10+(i+1)*100,150),(0,0,255))
     cv.putText(img,'e:erase s:show r:recognition q:quit',(10,40),cv.FONT_HERSHEY_SIMPLEX,0.8,(255,0,0),1)
@@ -37,7 +38,7 @@ def recognition():
     numerals=numerals.reshape(5,784)
     numerals=numerals.astype(np.float32)/255.0
     res=model.predict(numerals) # 신경망 모델로 예측
-    class_id=np.argmax(res,axis=1)
+    class_id=np.argmax(res,axis=1)  # 각 숫자의 10개 점수 중 가장 큰 값의 번호를 택합니다.
     for i in range(5):
         cv.putText(img,str(class_id[i]),(50+i*100,180),cv.FONT_HERSHEY_SIMPLEX,1,(255,0,0),1)
     winsound.Beep(1000,500)    

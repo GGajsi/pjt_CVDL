@@ -24,7 +24,8 @@ dmlp.compile(loss='categorical_crossentropy',optimizer=Adam(learning_rate=0.0001
 hist=dmlp.fit(x_train,y_train,batch_size=128,epochs=50,validation_data=(x_test,y_test),verbose=2)
 print('정확률=', dmlp.evaluate(x_test,y_test,verbose=0)[1]*100)
 
-dmlp.save('dmlp_trained.h5')
+dmlp.save('dmlp_trained.h5')  #  비전 에이전트 제작을 위해 학습된 모델을 저장
+
 
 import matplotlib.pyplot as plt
 
