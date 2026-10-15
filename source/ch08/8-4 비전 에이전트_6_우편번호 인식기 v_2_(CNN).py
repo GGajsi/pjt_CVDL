@@ -4,6 +4,7 @@ import cv2 as cv
 import matplotlib.pyplot as plt
 import winsound
 
+# 훈련한 모델을 가져오기
 model=tf.keras.models.load_model('cnn_v2.h5')
 
 def reset():

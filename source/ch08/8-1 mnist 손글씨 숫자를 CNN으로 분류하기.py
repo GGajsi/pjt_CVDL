@@ -7,6 +7,9 @@ from tensorflow.keras.layers import Conv2D,MaxPooling2D,Flatten,Dropout,Dense
 from tensorflow.keras.optimizers import Adam
 
 (x_train,y_train),(x_test,y_test)=ds.mnist.load_data()
+
+print(x_train.shape)
+
 x_train=x_train.reshape(60000,28,28,1)
 x_test=x_test.reshape(10000,28,28,1)
 x_train=x_train.astype(np.float32)/255.0
