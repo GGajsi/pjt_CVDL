@@ -8,7 +8,7 @@ import pandas as pd
 import numpy as np
 
 BASE_DIR = Path(__file__).resolve().parents[2]
-SEQ_DIR = BASE_DIR / "datasets" / "MOT17" / "train" / "MOT17-11-SDP"
+SEQ_DIR = BASE_DIR / "datasets" / "MOT17" / "train" / "MOT17-04-SDP"
 IMG_DIR = SEQ_DIR / "img1"
 DET_FILE = SEQ_DIR / "det" / "det.txt"
 
